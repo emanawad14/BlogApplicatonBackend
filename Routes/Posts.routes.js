@@ -5,7 +5,7 @@ const { protect } = require("../Middleware/authMiddleware");
 
 const router = express.Router();
 
-// ✅ Get all posts
+
 router.get("/", protect, async (req, res) => {
   const posts = await Post.find().populate("user", "name email");
   res.json(posts);
